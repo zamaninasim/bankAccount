@@ -74,5 +74,41 @@ public class Account {
         return localDate;
     }
 
+    public static Account factory(int choice, long amount, User user) {
+        boolean check = false;
+        Account account = null;
+        if (choice == 1) {
+            while (!check) {
+                if (amount >= 100000) {
+                    account = new CurrentAccount(amount, user);
+                    check = true;
+                } else {
+                    System.out.println("your amount must be more than 100000 tomaan.");
+                    amount = 100000;
+                }
+            }
+        } else if (choice == 2) {
+            while (!check) {
+                if (amount >= 50000) {
+                    account = new ShortTermAccount(amount, user);
+                    check = true;
+                } else {
+                    System.out.println("your amount must be more than 50000 tomaan.");
+                    amount = 50000;
+                }
+            }
+        } else if (choice == 3) {
+            while (!check) {
+                if (amount >= 100000) {
+                    account = new LongTermAccount(amount, user);
+                    check = true;
+                } else {
+                    System.out.println("your amont must be more than 100000 tomaan,enter new amount.");
+                    amount = 100000;
+                }
+            }
+        }
+        return account;
+    }
 }
 
