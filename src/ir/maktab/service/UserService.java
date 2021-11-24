@@ -1,6 +1,7 @@
 package ir.maktab.service;
 
 import ir.maktab.model.User;
+import ir.maktab.model.UserBuilder;
 
 public class UserService {
 
