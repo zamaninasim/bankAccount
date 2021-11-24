@@ -5,6 +5,7 @@ import ir.maktab.model.User;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Scanner;
 
 
 public class Account {
@@ -74,7 +75,7 @@ public class Account {
         return localDate;
     }
 
-    public static Account factory(int choice, long amount, User user) {
+    public static Account factory(int choice, long amount, User user, Scanner scanner) {
         boolean check = false;
         Account account = null;
         if (choice == 1) {
@@ -84,7 +85,7 @@ public class Account {
                     check = true;
                 } else {
                     System.out.println("your amount must be more than 100000 tomaan.");
-                    amount = 100000;
+                    amount = scanner.nextLong();
                 }
             }
         } else if (choice == 2) {
@@ -94,7 +95,7 @@ public class Account {
                     check = true;
                 } else {
                     System.out.println("your amount must be more than 50000 tomaan.");
-                    amount = 50000;
+                    amount = scanner.nextLong();
                 }
             }
         } else if (choice == 3) {
@@ -104,7 +105,7 @@ public class Account {
                     check = true;
                 } else {
                     System.out.println("your amont must be more than 100000 tomaan,enter new amount.");
-                    amount = 100000;
+                    amount = scanner.nextLong();
                 }
             }
         }
